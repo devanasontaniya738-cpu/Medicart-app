@@ -1,8 +1,9 @@
 name: MediCart pipeline
 on:
+  push:
+    branches: [main]
   pull_request:
     branches: [main]
-    
 
 jobs:
   build-test:
@@ -31,4 +32,4 @@ jobs:
         with:
           name: medicart-build-${{ github.sha }}
           path: dist/
-          retention-days: 7
+          retention-days: 7s
